@@ -1,0 +1,97 @@
+@use '../abstracts/mixins' as *;
+
+.contact {
+	padding: 8rem 2rem;
+	border-bottom: 1px solid var(--clr-primary-100);
+	min-height: 100vh;
+
+	h3,
+	h4 {
+		color: var(--clr-text-100);
+		text-transform: uppercase;
+	}
+
+	&__tags {
+		@include flex(baseline, space-between);
+		height: 15vh;
+
+		@include mq(small) {
+			height: 25vh;
+		}
+
+		& > h4 {
+			@media screen and (max-width: 640px) {
+				width: 100%;
+			}
+		}
+
+		& > div {
+			align-self: end;
+		}
+	}
+
+	&__title {
+		position: relative;
+
+		& h1 {
+			position: relative;
+			z-index: 1;
+		}
+
+		& .large-title:nth-child(1) {
+			color: var(--clr-text-100);
+		}
+
+		& .large-title:nth-child(2) {
+			color: var(--clr-secondary-100);
+		}
+
+		& > div {
+			@include flex(center, start);
+			gap: 3rem;
+		}
+
+		& > h1 {
+			text-align: right;
+		}
+
+		& > img {
+			position: absolute;
+			bottom: -40%;
+			width: 50%;
+			right: 0;
+
+			@include mq(small) {
+				width: 30%;
+				right: 10%;
+				bottom: 8%;
+			}
+		}
+	}
+
+	&__button-title {
+		@media screen and (max-width: 640px) {
+			display: none;
+		}
+	}
+
+	&__buttons {
+		margin-top: 6rem;
+		@include flex(center, start);
+
+		& > :nth-child(1),
+		:nth-child(2),
+		:nth-child(3) {
+			display: none;
+			@include mq(small) {
+				@include flex(center, space-between);
+			}
+		}
+	}
+
+	&__mobile-button {
+		@include mq(small) {
+			display: none;
+		}
+	}
+}

@@ -1,0 +1,1 @@
+{"mappings":"AAAA,OAAO,gBAAgB,CAAC,UAAU,IAAM;IACvC,QAAQ,GAAG,CAAC;AACb","sources":["assets/js/app.js"],"sourcesContent":["window.addEventListener('onload', () => {\r\n\tconsole.log('Present Sire')\r\n})\r\n"],"names":[],"version":3,"file":"index.fbb7b822.js.map","sourceRoot":"/__parcel_source_root/"}

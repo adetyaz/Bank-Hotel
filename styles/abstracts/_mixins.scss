@@ -1,0 +1,16 @@
+@use 'breakpoint' as *;
+
+@mixin mq($key) {
+	//maps the screensize from the ey
+	$size: map-get($breakpoints, $key);
+
+	@media only screen and (min-width: $size) {
+		@content;
+	}
+}
+
+@mixin flex($align, $justify) {
+	display: flex;
+	align-items: $align;
+	justify-content: $justify;
+}

@@ -1,0 +1,25 @@
+@use '../abstracts/mixins' as *;
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	font-family: 'Helvetica';
+	overflow-x: hidden;
+}
+
+header,
+section,
+footer {
+	padding: 2rem;
+}
+
+main {
+	margin-top: -1rem;
+	& > hr {
+		width: 95%;
+		height: 0.1rem;
+		background: var(--clr-text-400);
+	}
+}

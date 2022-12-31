@@ -1,0 +1,52 @@
+@use '../abstracts/mixins' as *;
+
+.btn {
+	background: transparent;
+	border: none;
+	cursor: pointer;
+
+	&:hover {
+		& img {
+			filter: invert(3);
+		}
+	}
+}
+
+.booking-button {
+	border: none;
+	outline: none;
+	padding: 4rem;
+	font-size: var(--fs-300);
+	text-transform: uppercase;
+	@include flex(center, center);
+
+	@include mq(small) {
+		width: 20rem;
+	}
+
+	@include mq(medium) {
+		width: 30rem;
+	}
+
+	&.primary {
+		background: var(--clr-primary-300);
+		color: var(--clr-light-100);
+		filter: blur();
+	}
+
+	&.secondary {
+		background: var(--clr-secondary-100);
+		color: var(--clr-text-100);
+	}
+
+	&.dark {
+		background: var(--clr-primary-100);
+		color: var(--clr-light-100);
+	}
+
+	&.outline {
+		background: transparent;
+		border: 1px solid var(--clr-primary-100);
+		color: var(--clr-text-100);
+	}
+}

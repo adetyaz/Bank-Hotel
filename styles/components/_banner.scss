@@ -1,0 +1,37 @@
+@use '../abstracts/mixins' as *;
+
+.banner {
+	min-height: 100vh;
+	color: var(--clr-secondary-100);
+	background-image: url('../assets/images/mobile-banner.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	position: relative;
+	@include flex(start, space-between);
+	flex-direction: column;
+
+	& > article {
+		justify-self: end;
+	}
+
+	& h4,
+	& h2 {
+		color: var(--clr-secondary-100);
+		line-height: 1.1;
+	}
+
+	@include mq(small) {
+		background-image: url('../assets/images/banner.png');
+
+		& > article {
+			justify-self: start;
+		}
+	}
+
+	& > img {
+		position: absolute;
+		top: 50%;
+		width: 100%;
+	}
+}

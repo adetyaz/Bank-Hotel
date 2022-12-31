@@ -1,0 +1,109 @@
+@use '../abstracts/mixins' as *;
+
+.rooms {
+	background: var(--clr-light-100);
+	padding: 10rem 2rem;
+	min-height: 100vh;
+
+	& > p:nth-child(1) {
+		@include mq(small) {
+			display: none;
+		}
+	}
+
+	& h2,
+	& h3,
+	& h4 {
+		color: var(--clr-text-100);
+		text-transform: uppercase;
+	}
+
+	&__title-content {
+		margin-bottom: 8rem;
+		@include mq(small) {
+			@include flex(unset, space-between);
+		}
+
+		& h4 {
+			width: 45%;
+
+			@include mq(small) {
+				width: 25%;
+			}
+		}
+	}
+
+	&__carousel-content {
+		@include flex(start, space-between);
+		flex-direction: column-reverse;
+		@include mq(small) {
+			flex-direction: row;
+		}
+	}
+
+	&__carousel-text {
+		flex-basis: 60%;
+		@include mq(small) {
+			@include flex(start, space-between);
+			flex-direction: column;
+			flex-basis: 30%;
+		}
+	}
+
+	&__carousel-text,
+	&__small-image {
+		@media screen and (max-width: 640px) {
+			display: none;
+		}
+
+		@include mq(medium) {
+			height: 100vh;
+		}
+	}
+
+	&__carousel-image {
+		flex-basis: 35%;
+		position: relative;
+
+		& > button {
+			position: absolute;
+			bottom: 1rem;
+			right: 2rem;
+		}
+	}
+
+	&__small-image {
+		@include mq(small) {
+			@include flex(start, space-between);
+			flex-direction: column;
+		}
+
+		&--img {
+			display: none;
+
+			@include mq(medium) {
+				display: block;
+			}
+		}
+	}
+
+	&__mobile {
+		margin: 2rem 0;
+
+		& > div {
+			@include flex(start, space-between);
+		}
+
+		& button {
+			flex-basis: 20%;
+		}
+
+		& p {
+			flex-basis: 70%;
+		}
+
+		@include mq(small) {
+			display: none;
+		}
+	}
+}

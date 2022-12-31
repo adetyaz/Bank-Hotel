@@ -1,0 +1,159 @@
+@use '../abstracts/mixins' as *;
+
+.gallery {
+	position: relative;
+	background-color: var(--clr-primary-100);
+	padding: 8rem 0;
+	min-height: 100vh;
+
+	& > img {
+		margin: 2rem auto;
+	}
+
+	& > .page-tags {
+		display: none;
+
+		@include mq(small) {
+			display: block;
+			margin-left: 2rem;
+		}
+
+		@include mq(medium) {
+			display: none;
+		}
+	}
+
+	&__title {
+		@include flex(center, center);
+		flex-direction: column;
+		position: relative;
+		z-index: 1;
+
+		& h2 {
+			color: var(--clr-secondary-100);
+		}
+
+		@include mq(small) {
+			flex-direction: row;
+			gap: 2rem;
+		}
+	}
+
+	& p {
+		color: var(--clr-light-100);
+	}
+
+	&__center-text {
+		text-align: center;
+		margin: 2rem auto;
+		position: relative;
+		z-index: 1;
+		width: 90%;
+
+		@include mq(small) {
+			width: 60%;
+		}
+
+		@include mq(medium) {
+			width: 40%;
+		}
+	}
+
+	&__center-image {
+		margin: 2rem auto;
+		position: relative;
+		z-index: 1;
+
+		// @include mq(small) {
+		// 	width: 80%;
+		// }
+
+		// @include mq(medium) {
+		// 	width: 60%;
+		// }
+
+		& > img {
+			margin-inline: auto;
+			width: 60%;
+
+			@include mq(medium) {
+				width: 50%;
+			}
+		}
+	}
+
+	&__text {
+		@include flex(center, center);
+		gap: 2rem;
+		position: relative;
+		z-index: 1;
+
+		& p {
+			text-transform: capitalize;
+			font-style: italic;
+		}
+	}
+
+	&__images {
+		& > picture {
+			position: absolute;
+			width: 18%;
+
+			@media screen and (max-width: 640px) {
+				width: 30%;
+			}
+		}
+
+		&--one {
+			top: 30%;
+			left: -5%;
+			@media screen and (max-width: 640px) {
+				top: 50%;
+			}
+		}
+		&--two {
+			right: 0;
+			top: 32%;
+			width: 15%;
+			@media screen and (max-width: 640px) {
+				top: 55%;
+			}
+		}
+		&--three {
+			bottom: 26%;
+			left: 1rem;
+			@media screen and (max-width: 640px) {
+				left: 0;
+				bottom: 15%;
+			}
+		}
+		&--four {
+			right: 2rem;
+			z-index: 1;
+
+			@media screen and (max-width: 640px) {
+				bottom: 16%;
+				z-index: 0;
+			}
+		}
+	}
+
+	&__sliding-text {
+		display: none;
+		font-size: var(--fs-800);
+		font-family: 'Miracle';
+		color: var(--clr-light-400);
+
+		&--one {
+			margin-top: 5rem;
+		}
+
+		& > span {
+			color: var(--clr-light-100);
+		}
+
+		@include mq(small) {
+			display: block;
+		}
+	}
+}

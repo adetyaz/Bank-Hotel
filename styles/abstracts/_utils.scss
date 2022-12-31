@@ -1,0 +1,81 @@
+@use 'mixins' as *;
+
+.date {
+	display: none;
+
+	@include mq(medium) {
+		display: block;
+		width: max-content;
+		@include flex(center, center);
+		gap: 1rem;
+		border-radius: var(--border-rounded);
+		border: 1px solid var(--clr-light-600);
+		padding: 1rem 3rem;
+		background: transparent;
+	}
+
+	& > p {
+		text-transform: capitalize;
+		color: var(--clr-light-100);
+	}
+
+	&.alternate {
+		border: 1px solid var(--clr-primary-600);
+
+		& > p {
+			color: var(--clr-text-100);
+		}
+	}
+}
+
+.page-tags {
+	& > p {
+		text-align: left;
+
+		@include mq(small) {
+			text-align: right;
+		}
+	}
+
+	& > p:nth-child(2) {
+		font-style: italic;
+	}
+}
+
+.rotating-circle {
+	animation: rotation 65s linear infinite;
+}
+
+.cta__circle {
+	width: 7.7vw;
+	height: 7.7vw;
+	position: absolute;
+	top: 0;
+
+	background: url('../assets/images/svg/floral.svg') no-repeat center;
+	background-size: 50% 50%;
+}
+.cta__circle--logo {
+	width: 15rem;
+	height: 15rem;
+	background: url('../assets/images/svg/rotating-text.svg') no-repeat center;
+	background-size: 100% 100%;
+	animation: rotation 65s linear infinite;
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	&.alternate {
+		background: url('../assets/images/svg/rotating-text-dark.svg') no-repeat
+			center;
+	}
+}
+
+@keyframes rotation {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}

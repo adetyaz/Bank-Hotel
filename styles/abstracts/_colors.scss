@@ -1,0 +1,41 @@
+$colors: (
+	primary: (
+		100: #313f38,
+		200: #313f38dc,
+		300: #313f38ab,
+		400: #313f3875,
+		500: #313f385d,
+		600: #313f382c,
+	),
+	secondary: (
+		100: #fcd043,
+		200: #fcd143dc,
+		300: #fcd043ab,
+		400: #fcd04375,
+		500: #fcd0435d,
+		600: #fcd0432c,
+	),
+	text: (
+		100: #1b3b36,
+		200: #1b3b36dc,
+		300: #1b3b36ab,
+		400: #1b3b3675,
+		500: #1b3b365d,
+		600: #1b3b362c,
+	),
+	light: (
+		100: #fffcf6,
+		200: #fffcf6dc,
+		300: #fffcf6ab,
+		400: #fffcf675,
+		500: #fffcf65d,
+		600: #fffcf62c,
+	),
+	utility: (
+		error: #b03e3e,
+		attention: #dc9b39,
+		success: #2a5b46,
+		link: #1b3b36,
+		link-hover: #455955,
+	),
+);

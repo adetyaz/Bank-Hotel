@@ -1,0 +1,92 @@
+@use '../abstracts/mixins' as *;
+
+.booking {
+	background: var(--clr-primary-100);
+
+	&__background {
+		background-image: url('../assets/images/mobile-hero.png');
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: bottom;
+		height: 100vh;
+		position: relative;
+
+		@include mq(small) {
+			background-image: url('../assets/images/tablet-hero.png');
+		}
+
+		@include mq(medium) {
+			background-image: url('../assets/images/hero.png');
+		}
+	}
+
+	&__buttons {
+		@include flex(center, center);
+		position: absolute;
+		bottom: 0;
+		right: 0;
+
+		@include mq(medium) {
+			top: 0;
+			bottom: initial;
+		}
+
+		& > :nth-child(1),
+		:nth-child(2) {
+			display: none;
+			@include mq(small) {
+				@include flex(center, space-between);
+			}
+		}
+	}
+
+	&__bottom {
+		@include flex(center, space-between);
+		color: var(--clr-light-100);
+		margin-top: 2rem;
+
+		& > div:nth-child(1) {
+			display: none;
+
+			& > p:nth-child(1) {
+				color: var(--clr-secondary-100);
+			}
+
+			@include mq(small) {
+				display: block;
+			}
+		}
+
+		& > div:nth-child(2) {
+			& > p {
+				text-align: left;
+
+				@include mq(small) {
+					text-align: right;
+				}
+			}
+
+			& > p:nth-child(2) {
+				font-style: italic;
+			}
+		}
+	}
+
+	&__button {
+		display: none;
+
+		@include mq(small) {
+			display: block;
+		}
+	}
+
+	&__mobile-button {
+		position: absolute;
+		bottom: 2rem;
+		right: 2rem;
+
+		@include mq(small) {
+			display: none;
+		}
+	}
+}

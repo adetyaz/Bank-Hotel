@@ -1,0 +1,23 @@
+@use '../abstracts/mixins' as *;
+
+.header {
+	background: var(--clr-primary-100);
+	@include flex(center, space-between);
+
+	& > p {
+		color: var(--clr-light-100);
+		font-size: var(--fs-200);
+		display: none;
+		@include mq(small) {
+			display: block;
+		}
+	}
+}
+
+.logo {
+	font-size: var(--fs-200);
+	font-weight: 600;
+	color: var(--clr-light-100);
+	word-spacing: -3px;
+	text-transform: capitalize;
+}

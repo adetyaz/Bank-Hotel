@@ -1,0 +1,222 @@
+@use '../abstracts/mixins' as *;
+
+.facilities {
+	background: var(--clr-light-100);
+	padding: 8rem 2rem;
+
+	&__head {
+		@include flex(flex-start, center);
+		// gap: 5rem;
+
+		@include mq(medium) {
+			@include flex(flex-end, space-between);
+		}
+
+		& > div:nth-child(1) {
+			order: 1;
+			justify-self: flex-end;
+
+			@include mq(medium) {
+				order: 0;
+				align-self: flex-start;
+			}
+		}
+
+		p {
+			color: var(--clr-text-100);
+			text-transform: capitalize;
+		}
+	}
+
+	&__title {
+		@include flex(start, center);
+		flex-direction: column;
+
+		h2 {
+			color: var(--clr-text-100);
+			text-transform: uppercase;
+		}
+
+		& > div {
+			@include flex(center, center);
+			gap: 2rem;
+		}
+	}
+
+	&__head-image {
+		width: 30%;
+		display: none;
+
+		@include mq(medium) {
+			display: block;
+		}
+	}
+
+	&__article {
+		@include flex(center, start);
+		flex-direction: column;
+
+		@include mq(small) {
+			flex-direction: row;
+			gap: 15%;
+			height: 65vh;
+		}
+
+		& > div {
+			position: relative;
+			margin: 2rem 0;
+		}
+
+		& > img {
+			width: 60%;
+			margin: 2rem 0;
+			@include mq(small) {
+				width: 25%;
+				flex-basis: 30%;
+			}
+		}
+
+		& > p {
+			@include mq(small) {
+				flex-basis: 30%;
+				align-self: flex-end;
+			}
+		}
+	}
+
+	&__circle {
+		display: none;
+
+		@include mq(small) {
+			display: block;
+			top: -6rem;
+			right: -6rem;
+			left: initial;
+		}
+	}
+
+	&__mobile-titles {
+		@include flex(center, start);
+		width: 100%;
+		gap: 27%;
+		margin-top: 2rem;
+
+		@include mq(small) {
+			display: none;
+		}
+	}
+
+	&__text-content {
+		@include flex(start, space-between);
+		flex-direction: column;
+		flex-basis: 65%;
+
+		@include mq(medium) {
+			flex-basis: 55%;
+		}
+
+		@include mq(medium) {
+			flex-basis: 40%;
+		}
+
+		& h3 {
+			display: none;
+
+			@include mq(small) {
+				display: block;
+			}
+		}
+	}
+
+	h3 {
+		color: var(--clr-text-100);
+	}
+
+	&__details {
+		@include flex(center, space-between);
+		flex-direction: column-reverse;
+
+		@include mq(small) {
+			flex-direction: row;
+			margin: 15rem 0;
+		}
+
+		& div:nth-child(1) {
+			@include flex(center, space-between);
+
+			@include mq(small) {
+				justify-content: start;
+				flex-direction: row;
+				gap: 15%;
+				margin: 10rem 0;
+			}
+
+			@include mq(medium) {
+				gap: 25%;
+			}
+		}
+
+		&--image {
+			order: 1;
+			flex-basis: 100%;
+
+			@include mq(small) {
+				order: initial;
+			}
+
+			@include mq(medium) {
+				flex-basis: initial;
+			}
+
+			& .page-tags {
+				display: none;
+
+				@include mq(small) {
+					display: block;
+				}
+
+				@include mq(medium) {
+					display: none;
+				}
+			}
+		}
+
+		&--img {
+			@include mq(medium) {
+				max-width: initial;
+			}
+		}
+	}
+
+	&__list {
+		padding: 2rem 0;
+		border-bottom: 1px solid var(--clr-text-500);
+
+		@include mq(small) {
+			@include flex(center, space-between);
+		}
+
+		&--image {
+			@include flex(start, space-between);
+
+			& > img {
+				width: 50%;
+			}
+		}
+
+		& > div,
+		&--image {
+			@include mq(small) {
+				@include flex(center, center);
+				gap: 5rem;
+			}
+		}
+
+		& > img {
+			display: none;
+			@include mq(small) {
+				display: block;
+			}
+		}
+	}
+}
