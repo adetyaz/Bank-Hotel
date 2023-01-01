@@ -59,7 +59,8 @@
 		}
 
 		@include mq(small) {
-			@include flex(center, space-between);
+			@include flex(center, start);
+			gap: 3rem;
 
 			& p {
 				text-align: initial;
@@ -67,13 +68,26 @@
 		}
 	}
 
+	&__form-group {
+		position: relative;
+
+		& > img {
+			position: absolute;
+			top: 4rem;
+			right: 1rem;
+			width: 2rem;
+		}
+	}
+
 	&__form {
 		display: none;
 		@include mq(small) {
+			margin-top: 2rem;
 			display: block;
-			padding: 2rem 1rem;
+			padding: 1rem 1rem;
 			outline: none;
-			border: 1px solid var(--clr-primary-100);
+			border: 1px solid var(--clr-primary-400);
+			font-size: var(--fs-400);
 		}
 	}
 }

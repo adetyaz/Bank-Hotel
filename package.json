@@ -2,10 +2,9 @@
 	"name": "bank-hotel",
 	"version": "1.0.0",
 	"description": "",
-	"main": "index.js",
 	"scripts": {
 		"dev": "parcel index.html",
-		"build": "parcel build index.html main.scss --public-url ./"
+		"build": "parcel build index.html styles/main.scss --public-url ./"
 	},
 	"keywords": [],
 	"author": "",

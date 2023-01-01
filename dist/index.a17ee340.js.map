@@ -1,0 +1,1 @@
+{"mappings":"AAAAA,OAAOC,iBAAiB,UAAU,KACjCC,QAAQC,IAAI","sources":["assets/js/app.js"],"sourcesContent":["window.addEventListener('onload', () => {\r\n\tconsole.log('Present Sire')\r\n})\r\n"],"names":["window","addEventListener","console","log"],"version":3,"file":"index.a17ee340.js.map"}
